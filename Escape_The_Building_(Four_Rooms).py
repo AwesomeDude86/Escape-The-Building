@@ -1,7 +1,16 @@
+print('''
++=====================+
+߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷
+Welcome to the escape room
+۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩
+''')
+input("Press enter to start your journey")
 import time
 import sys
-import platform,os
+import platform,os,webbrowser as w
 Key_Possesion=False
+def web(url):
+  w.open(url)
 if platform.system()=="Windows":#If running on windows
   def clear():
       os.system("cls")
@@ -12,7 +21,7 @@ def running():
     #RUnning animation
     for X in range(100):
         print((X*"*")+"|")
-        time.sleep(0.01)
+        
         clear()
 def White_Room(key=False):
     White_Direction=input('You are in a white room with doors on three sides of it. To the west is a green door. To the north is a red door. To the east is a brown door. The brown door is locked with a keyhole in it. Choose a direction.')
@@ -43,15 +52,29 @@ def Green_Room():
 def Red_Room():
     print('You are in the red room. You see a tribe of Ugandan Knuckles. They start spitting on you.')
     time.sleep(5)
+    
     print('GAME OVER')
+    input("press enter to exit")
+    sys.exit(0)
 
+def timed(timer):
+  t=time.time()
+  input(">")
+  if (time.time()-t)>timer:
+    print("YOU DIED")
+    input("press enter to exit")
+    sys.exit()
+  return "win"
+  
 def Brown_Room(key=False):
     if key:
-        Brown_Direction=input('Whew there was no danger! You can go back or continue. To keep going pressWhich Direction now>')
+        Brown_Direction=input('Whew there was no danger! You can go back or continue. To keep going type "keep walking" !Which Direction now>')
         if Brown_Direction=='keep walking':
-            print('You walk out of the building into the sun.')
+            print('You walk out of the room and fall flat onto a moving train.')
             time.sleep(5)
-            print('Congratulations! You have exited the building successfully! You successfully took the key to the brown room, entered the brown room, and walked out of the building successfully!')
+            print('Press enter to duck because of the tunnel')
+            timed(2)
+            print("To be continued")
         else:
             if Brown_Direction=='west':
                 White_Room()
@@ -60,4 +83,11 @@ def Brown_Room(key=False):
         White_Room()
 running()
 White_Room()
-input("YOu made it!!!!! Go treat yourself to some ice cream!!!!!")
+print('''
+
+YOu land in a room full of fluffly kittens
+
+''')
+input("You made it!!!!! Go treat yourself to some ice cream!!!!! And visit our website")
+web("http://pythonsnake2017.pythonanywhere.com")
+
