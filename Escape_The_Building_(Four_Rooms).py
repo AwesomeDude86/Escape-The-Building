@@ -1,8 +1,8 @@
 print('''
 +=====================+
-߷߷߷߷߷߷߷߷߷߷߷߷߷߷߷
+
 Welcome to the escape room
-۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩۩
+
 ''')
 input("Press enter to start your journey")
 import time
@@ -74,7 +74,26 @@ def Brown_Room(key=False):
             time.sleep(5)
             print('Press enter to duck because of the tunnel')
             timed(2)
-            print("To be continued")
+            print("YOu go thorught the tunnel. To the left is a door with a cat picture on it and to the right is a door with a dog picture")
+            d=input(">")
+            if d=="left":
+              print("Yes you have got it now you see a army of ugandan knuckles time to jump! Press enter to jump")
+              timed(2)
+              print("made it")
+              timed(4)
+              print("made it")
+              timed(5)
+              print("made it")
+              timed(1)
+              print("made it(1 more)")
+              timed(0.5)
+              print("made it")
+              time.sleep(0.1)
+              print("""They say "we're not dead yet!!!!!!" """)
+              running()
+            else:
+              print("You feel for it,because it was a bait")
+              
         else:
             if Brown_Direction=='west':
                 White_Room()
@@ -85,7 +104,7 @@ running()
 White_Room()
 print('''
 
-YOu land in a room full of fluffly kittens
+You land in a room full of fluffly kittens
 
 ''')
 input("You made it!!!!! Go treat yourself to some ice cream!!!!! And visit our website")
