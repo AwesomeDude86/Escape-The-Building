@@ -65,7 +65,22 @@ def timed(timer):
     input("press enter to exit")
     sys.exit()
   return "win"
-  
+def level2():
+  print("TO be continued")
+def climbing():
+  print("you are on a staircase climb up or down")
+  a=input(">")
+  if a=="left":
+    print("Great! You are in a room with Pikataros doing trump wall.There's a bowling ball! What do you do Options:(headbutt or bowling ball)")
+    a=input(">")
+    if a=="bowling ball":
+      print("Great choice")
+      level2()
+    else:
+      print("you've been hit by a pen pineapple apple pen aka PPAP")
+  else:
+    print("Some dogs scratch you to death! THE END!!")
+    sys.exit()
 def Brown_Room(key=False):
     if key:
         Brown_Direction=input('Whew there was no danger! You can go back or continue. To keep going type "keep walking" !Which Direction now>')
@@ -91,8 +106,10 @@ def Brown_Room(key=False):
               time.sleep(0.1)
               print("""They say "we're not dead yet!!!!!!" """)
               running()
+              climbing()
             else:
-              print("You feel for it,because it was a bait")
+              print("You fell for it,because it was a bait")
+              sys.exit()
               
         else:
             if Brown_Direction=='west':
